@@ -1,0 +1,23 @@
+<div class="container-fluid">
+
+  <loading-component ng-if="$ctrl.loading"></loading-component>
+
+  <div class="container" ng-if="!$ctrl.loading">
+    <h1 class="headline-h1">Lista de personagens da Marvel</h1>
+    <span class="short-number" ngIf="ctrl.marvel.data.results.length > 1">{{$ctrl.marvel.data.total}} - resultados</span>
+    <ul class="container lista-herois ">
+      <article class="item-hero" ng-repeat="hero in $ctrl.marvel.data.results">
+        <a class="link-hero" href="#!/hero/{{hero.id}}">
+          <div class="card-thumb">
+            <figure>
+              <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" />
+            </figure>
+          </div>
+          <div class="body">
+            <p class="headline">{{hero.name}}</p>
+          </div>
+        </a>
+      </article>
+    </ul>
+  </div>
+</div>

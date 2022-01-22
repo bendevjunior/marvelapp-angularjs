@@ -1,0 +1,177 @@
+.lista-herois {
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: repeat(auto-fit, minmax(47.5%, 1fr));
+    grid-column-gap: 10px;
+    transition: max-height 1s ease-out;
+}
+@media (min-width: 375px) {
+    .lista-herois {
+        grid-template-columns: repeat(auto-fill, minmax(31.66%, 1fr));
+    }
+}
+
+@media (min-width: 601px) {
+    .lista-herois {
+        grid-template-columns: repeat(auto-fit, minmax(23.75%, 1fr));
+    }
+}
+@media (min-width: 839px) {
+    .lista-herois {
+        grid-template-columns: repeat(auto-fit, minmax(15.82%, 1fr));
+    }
+}
+.item-hero {
+    position: relative;
+    margin: 6px 0 4px;
+}
+.item-hero:after {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: #fff;
+    border-style: solid;
+    border-top-color: transparent;
+    border-width: 12px 12px 0 0;
+    bottom: 0;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: auto;
+    z-index: 40;
+}
+.link-hero {
+    text-decoration: none;
+}
+.item-hero > .link-hero > .card-thumb > figure {
+    height: 170px;
+}
+.item-hero > .link-hero > .card-thumb > figure:after {
+    height: 4px;
+    content: "";
+    background-color: #e62429;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.item-hero:hover > .link-hero > .card-thumb > figure {
+    -webkit-transform: scale3d(1.05, 1.05, 1);
+    transform: scale3d(1.05, 1.05, 1);
+}
+.item-hero > .link-hero > .card-thumb > figure > img {
+    object-position: center center;
+    padding: 0;
+    width: 100%;
+    transition: all 0.2s linear;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+}
+
+.item-hero > .link-hero > .body {
+    padding: 16px 24px 17px 20px;
+    background: #151515;
+    color: #e62429;
+    transition: color 0.3s;
+    overflow: hidden;
+    position: relative;
+    line-height: 1;
+    height: 145px;
+    z-index: 30;
+}
+.item-hero > .link-hero > .body:before {
+    background: #e62429;
+    bottom: 100%;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    width: 100%;
+    z-index: -1;
+}
+
+.item-hero:hover .body:before {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+
+.item-hero > .link-hero > .card-thumb {
+    background: #e62429;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.item-hero > .link-hero > .body > .headline {
+    color: #fff;
+    font: 400 16px/1.1 RobotoCondensed Bold, Trebuchet MS, Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media (min-width: 601px) {
+    .item-hero > figure {
+        height: 210px;
+    }
+}
+
+.item-hero .body .card-footer {
+    bottom: 17px;
+    position: absolute;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.headline-h1 {
+    font: 800 26px/1 RobotoCondensed, Trebuchet MS, Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #202020;
+    margin-top: 20px;
+}
+.short-number {
+    font: 400 13px/1 Roboto Bold, Trebuchet MS, Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.wrapper-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+.wrapper-container h1 {
+    color: white;
+    text-align: center;
+    flex: 1;
+    font-weight: bold;
+}
+@media (min-width: 1241px) {
+    .wrapper-container h1 {
+        font-size: 90px;
+    }
+}
+@media (max-width: 750px) { 
+    .wrapper-container {
+        flex-direction: column;
+    }
+}
+.image-wrapper-detail {
+    max-width: 420px;
+}
+.image-wrapper-detail img{
+    max-width: 100%;
+}
+
+.cabecalho {
+    background-color: #151515;
+    padding: 0 80px;
+}

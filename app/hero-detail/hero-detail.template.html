@@ -1,0 +1,16 @@
+<div>
+  <header class="cabecalho">
+    <div class="wrapper-container">
+      <div class="image-wrapper-detail">
+        <figure>
+          <img src="{{$ctrl.hero.data.results[0].thumbnail.path}}.{{$ctrl.hero.data.results[0].thumbnail.extension}}">
+      </div>
+      </figure>
+      <h1>{{$ctrl.hero.data.results[0].name}}</h1>
+    </div>
+  </header>
+  <div class="container">
+    <h2>Descricao</h2>
+    <p>{{$ctrl.hero.data.results[0].description}}</p>
+  </div>
+</div>
