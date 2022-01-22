@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-br" ng-app="marvelApp">
+  <head>
+    <meta charset="utf-8">
+    <title>MarvelApp - Bendev</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css"/>
+
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="app.animations.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="core/hero/hero.module.js"></script>
+    <script src="components/loading/loading.component.js"></script>
+    <script src="core/hero/hero.service.js"></script>
+    <script src="components/Navegacao/navegacao.component.js"></script>
+    <script src="home/home.module.js"></script>
+    <script src="home/home.component.js"></script>
+    <script src="hero-detail/hero-detail.module.js"></script>
+    <script src="hero-detail/hero-detail.component.js"></script>
+  </head>
+  <body>
+    <navegacao-principal></navegacao-principal>
+
+    <main class="view-container">
+      <div ng-view></div>
+    </main>
+
+  </body>
+</html>
