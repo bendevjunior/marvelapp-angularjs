@@ -5,7 +5,7 @@ angular.
   component('homeComponent', {
     templateUrl: 'home/home.template.html',
     controller: ['Hero',
-      function PhoneListController(Hero) {
+      function HomeController(Hero) {
         this.loading = true
         console.log('carregando', this.loading)
         try {
@@ -14,7 +14,6 @@ angular.
         } catch (error) {
           this.loading = false
         }
-        this.phones = []
         this.orderProp = 'age';
         
       }
