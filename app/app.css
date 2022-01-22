@@ -179,3 +179,16 @@
     background-color: #151515;
     padding: 0 80px;
 }
+.hero-header {
+    background-image: url("https://terrigen-cdn-dev.marvel.com/content/prod/1x/characters_art_mas_dsk_01.jpg");
+    background-repeat: no-repeat;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.hero-header > .title {
+    font-weight: bold;
+    font: 500 26px/1 RobotoCondensed Bold,Trebuchet MS,Helvetica,Arial,sans-serif;
+}

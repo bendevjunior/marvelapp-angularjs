@@ -7,14 +7,13 @@ angular.
     controller: ['Hero',
       function HomeController(Hero) {
         this.loading = true
-        console.log('carregando', this.loading)
-        try {
-          this.marvel = Hero.query();
+        Promise.resolve(Hero.query())
+        .then(value => {
           this.loading = false
-        } catch (error) {
-          this.loading = false
-        }
-        this.orderProp = 'age';
+          this.marvel = value 
+          console.log(value)
+        })
+        .catch(e => console.log(e))
         
       }
     ]
