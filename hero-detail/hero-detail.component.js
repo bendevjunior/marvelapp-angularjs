@@ -14,7 +14,6 @@ angular.
           heroId: $routeParams.hero
         }
         );
-        console.log(self.hero)
       }
     ]
   });
