@@ -1,13 +1,13 @@
 {
   "name": "marvelapp-bendev",
-  "private": true,
+  "private": false,
   "version": "1.0",
   "description": "projeto criado em angularjs para teste.",
-  "repository": "",
+  "repository": "https://github.com/bendevjunior/marvelapp-angularjs",
   "author": {
     "name": "Bendev Junior",
     "email": "bendevoficial@gmail.com",
-    "url": "https://"
+    "url": "https://bendevoficial.com/"
   },
   "license": "MIT",
   "dependencies": {
