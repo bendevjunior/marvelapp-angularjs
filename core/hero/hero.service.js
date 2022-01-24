@@ -23,6 +23,7 @@ angular.
             ts: ts,
             hash: hash(),
             apikey: PUBLIC_KEY,
+            limit: 100
           },
           isArray: false
         }

@@ -2,15 +2,27 @@
 
   <div class="hero-header">
     <p style="color: white;text-align: center;">PERSONAGENS DA MARVEL</p>
-    <p style="color: white;text-align: center;">Fique viciado em uma generosa ajuda de heróis e vilões da humilde Casa das Ideias!</p>
+    <p style="color: white;text-align: center;">Fique viciado em uma generosa ajuda de heróis e vilões da humilde Casa
+      das Ideias!</p>
   </div>
   <loading-component ng-if="$ctrl.loading"></loading-component>
 
   <div class="container" ng-if="!$ctrl.loading">
     <h1 class="headline-h1">Lista de personagens da Marvel</h1>
-    <span class="short-number" ngIf="ctrl.marvel.data.results.length > 1">{{$ctrl.marvel.data.total}} - resultados</span>
+    <div class="search-container">
+      <span class="icon-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" viewBox="0 0 19 17" fill-rule="evenodd">
+          <circle cx="6.5" cy="6.5" r="5.5"></circle>
+          <path d="M14 14l3.536 3.536"></path>
+        </svg>
+      </span>
+      <input type="text" name="search" ng-model="search.$" placeholder="busca..">
+    </div>
+    <span class="short-number" ngIf="$ctrl.marvel.data.results.length > 1">{{$ctrl.marvel.data.total}} -
+      resultados</span>
     <ul class="container lista-herois ">
-      <article class="item-hero" ng-repeat="hero in $ctrl.marvel.data.results">
+      <article class="item-hero"
+        ng-repeat="hero in $ctrl.marvel.data.results | filter: search | filter:q | startFrom:currentPage*pageSize | limitTo:pageSize">
         <a class="link-hero" href="#!/hero/{{hero.id}}">
           <div class="card-thumb">
             <figure>
@@ -23,5 +35,15 @@
         </a>
       </article>
     </ul>
+    <div class="pagination">
+      <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        voltar
+      </button>
+      <span>{{currentPage+1}} / {{numberOfPages($ctrl.marvel.data.results.length)}}</span>
+      <button ng-disabled="currentPage >= numberOfPages($ctrl.marvel.data.results.length) - 1"
+        ng-click="currentPage=currentPage+1">
+        proximo
+      </button>
+    </div>
   </div>
 </div>
